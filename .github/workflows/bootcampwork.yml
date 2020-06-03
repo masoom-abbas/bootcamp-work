@@ -24,13 +24,11 @@ jobs:
     # Runs a single command using the runners shell
     - name: Installing node
       uses: actions/setup-node@v2-beta
-   with:
+      with:
        node-version: 12
 
     # Runs a set of commands using the runners shell
     - name: Installing surge
       run: npm installing --global surge
-      name: deploying using surge 
-      runL: surge ./  bootcamp-work.surge.sh -- token ${{secrets.surge_token}}
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    -  name: deploying using surge 
+       run: surge ./  bootcamp-work.surge.sh -- token ${{secrets.surge_token}}
